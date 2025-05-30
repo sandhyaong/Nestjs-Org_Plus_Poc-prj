@@ -7,6 +7,8 @@ import { AcknowledgmentsController } from './acknowledgments/acknowledgments.con
 import { AcknowledgmentsModule } from './acknowledgments/acknowledgments.module';
 import { UsersModule } from './users/users.module';
 import { ConfigModule, ConfigService } from '@nestjs/config';
+import { SubmissionController } from './submissions/submission.controller';
+import { SubmissionModule } from 'submissions/submission.module';
 
 @Module({
   imports: [
@@ -29,10 +31,10 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
     }),
     AuthModule,
     AcknowledgmentsModule,
-    UsersModule
-
+    UsersModule,
+    SubmissionModule
   ],
-  controllers: [AppController, AcknowledgmentsController],
+  controllers: [AppController, AcknowledgmentsController, SubmissionController],
   providers: [AppService],
 })
 export class AppModule {}
